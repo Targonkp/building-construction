@@ -8,8 +8,19 @@
     <title>Строительство современных ЖК</title>
   </head>
   <body>
+    <video autoplay muted loop class="background-video background-video-active">
+      <source
+        src="video/Dog%20-%2078200.mp4"
+        type="video/mp4"
+        class="source-video"
+      />
+    </video>
     <video autoplay muted loop class="background-video">
-      <source src="video/Dog%20-%2078200.mp4" type="video/mp4" />
+      <source
+        src="video/Flowers%20-%2064035.mp4"
+        type="video/mp4"
+        class="source-video"
+      />
     </video>
     <header>
       <div class="wrap">
@@ -141,13 +152,6 @@
                     class="houses-list__image"
                   />
                   <span class="houses-list__header">Северный парк</span>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
                   <p class="houses-list__paragraph">
                     Жилой комплекс небывалого масштаба с развитой
                     инфраструктурой
@@ -389,16 +393,38 @@
             <div class="filters-container filters-list__square">
               <span class="filters-header">Площадь</span>
               <ul class="filters-menu">
-                <li class="filters-menu__element square-element">От 32 м²</li>
-                <li class="filters-menu__element square-element">До 186 м²</li>
+                <li class="filters-menu__element square-element">
+                  <span class="text-field">от</span
+                  ><span class="edited-field" contenteditable="true"
+                    >32 м²</span
+                  >
+                </li>
+                <li class="filters-menu__element square-element">
+                  <span class="text-field">до</span>
+                  <span class="edited-field" contenteditable="true"
+                    >186 м²</span
+                  >
+                </li>
               </ul>
+              <div class="range-container range-square">
+                <div class="range-line"></div>
+              </div>
             </div>
             <div class="filters-container filters-list__cost">
               <span class="filters-header">Стоимость, млн ₽</span>
               <ul class="filters-menu">
-                <li class="filters-menu__element cost-element">От 1,5</li>
-                <li class="filters-menu__element cost-element">До 17,5</li>
+                <li class="filters-menu__element cost-element">
+                  <span class="text-field">от</span>
+                  <span class="edited-field" contenteditable="true">1,5</span>
+                </li>
+                <li class="filters-menu__element cost-element">
+                  <span class="text-field">до</span>
+                  <span class="edited-field" contenteditable="true">17,5</span>
+                </li>
               </ul>
+              <div class="range-container range-cost">
+                <div class="range-line"></div>
+              </div>
             </div>
 
             <div class="filters-container filters-list__building">
