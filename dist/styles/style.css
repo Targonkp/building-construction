@@ -1050,6 +1050,7 @@ main {
 
 .edited-field {
   outline: none;
+  cursor: auto;
 }
 
 .text-field {
@@ -1188,7 +1189,7 @@ main {
 }
 
 .filters-options {
-  padding: 12px 10px 10px 19px;
+  padding: 11px 10px 9px 19px;
   border-radius: 7px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   display: -webkit-box;
@@ -1231,17 +1232,21 @@ main {
   width: 100%;
 }
 
-.button_show {
+.filters-button {
   font-size: 16px;
   line-height: 16px;
   background: #d90002;
-  border-radius: 7px;
-  padding: 21px 23px 19px 23px;
+  width: 224px;
+  height: 56px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  cursor: pointer;
+  color: #ffffff;
+  border: 0;
+  border-radius: 7px;
 }
-.button_show:hover {
+.filters-button:hover {
   opacity: 0.8;
   background: #8b0002;
   -webkit-transition: 0.4s;

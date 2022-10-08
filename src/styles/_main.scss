@@ -382,6 +382,7 @@ main{
 
 .edited-field{
   outline: none;
+  cursor: auto;
 }
 
 .text-field{
@@ -511,7 +512,7 @@ main{
 }
 
 .filters-options{
-  padding: 12px 10px 10px 19px;
+  padding: 11px 10px 9px 19px;
   border-radius: 7px;
   border: 1px solid rgb(255, 255, 255, 0.3);
   display: flex;
@@ -545,13 +546,17 @@ main{
   width: 100%;
 }
 
-.button_show{
+.filters-button{
   font-size: 16px;
   line-height: 16px;
   background: #D90002;
-  border-radius: 7px;
-  padding: 21px 23px 19px 23px;
+  width: 224px;
+  height: 56px;
   transition: 0.3s;
+  cursor: pointer;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 7px;
 
     &:hover{
       opacity: 0.8;
