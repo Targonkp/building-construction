@@ -404,8 +404,7 @@ main{
   background: #D90002;
   position: relative;
 
-      &:before{
-        content: '';
+      span:first-child{
         position: absolute;
         top: 50%;
         left: 0;
@@ -418,8 +417,7 @@ main{
         cursor: pointer;
       }
 
-      &:after{
-        content: '';
+      span:last-child{
         position: absolute;
         top: 50%;
         right: 0;
@@ -606,3 +604,12 @@ main{
   }
 }
 
+
+@keyframes headerOpacity {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

@@ -6,7 +6,9 @@ videoElList.forEach(function (element) {
   element.pause();
 }); //массив с h1
 
-var headerArr = ['Стильная архитектура и виды из окон будущей квартиры не оставят равнодушных', 'Большие парковые территории и безопасные дворы созданы для счастливой жизни']; //записываю начальное значение активного видео
+var headerArr = ['Стильная архитектура и виды из окон будущей квартиры не оставят равнодушных', 'Большие парковые территории и безопасные дворы созданы для счастливой жизни']; //получаю основной заголовок
+
+var mainHeader = document.querySelector('.choice-buy__header'); //записываю начальное значение активного видео
 
 var startVideo = 0; //функция, запускающая видео с активным классом
 
@@ -27,14 +29,20 @@ function videoBackgroundNext() {
     startVideo = 0;
   } else {
     startVideo += 1;
-  } //удаляю у всех плееров активный класс
+  } //удаляю у всех плееров активный класс и класс, запрещающий анимацию
 
 
   videoElList.forEach(function (element) {
     element.classList.remove('background-video-active');
+    element.classList.remove('transition_disabled');
   }); //добавляю следующему плееру активный класс
 
-  videoElList[startVideo].classList.add('background-video-active');
+  videoElList[startVideo].classList.add('background-video-active'); //Добавляю заголовку анимацию и изменяю его текст
+
+  mainHeader.style.animation = 'headerOpacity 2s';
+  setTimeout(function () {
+    mainHeader.innerHTML = headerArr[startVideo];
+  }, 1000);
   activeVideo();
 } //функция, уменьшающая значение (левая стрелка)
 
@@ -46,13 +54,19 @@ function videoBackgroundPrevious() {
     startVideo -= 1;
   }
 
-  console.log(startVideo); //удаляю у всех плееров активный класс
+  console.log(startVideo); //удаляю у всех плееров активный класс и класс, запрещающий анимацию
 
   videoElList.forEach(function (element) {
     element.classList.remove('background-video-active');
+    element.classList.remove('transition_disabled');
   }); //добавляю предыдущему плееру активный класс
 
-  videoElList[startVideo].classList.add('background-video-active');
+  videoElList[startVideo].classList.add('background-video-active'); //Добавляю заголовку анимацию и изменяю его текст
+
+  mainHeader.style.animation = 'headerOpacity 3s';
+  setTimeout(function () {
+    mainHeader.innerHTML = headerArr[startVideo];
+  }, 1000);
   activeVideo();
 } // function func(){
 //     videoEl.pause();
@@ -62,11 +76,16 @@ function videoBackgroundPrevious() {
 //     videoEl.playbackRate = 0.4;
 // }
 // let videoArr = ['video/Dog%20-%2078200.mp4', 'video/Flowers%20-%2064035.mp4'];
-//навешиваю функциb для изменения фона
+//навешиваю функцию для изменения фона
 
 
 document.querySelector('.switch-arrow__right').addEventListener('click', videoBackgroundNext);
-document.querySelector('.switch-arrow__left').addEventListener('click', videoBackgroundPrevious); //получаю список элементов с количеством комнат в фильтре и назначаю класс при клике
+document.querySelector('.switch-arrow__left').addEventListener('click', videoBackgroundPrevious); //функция для смены активного класса у burger-menu
+
+var burgerMenuEl = document.querySelector('.burger-menu');
+burgerMenuEl.addEventListener('click', function () {
+  burgerMenuEl.classList.toggle('burger-menu-active');
+}); //получаю список элементов с количеством комнат в фильтре и назначаю класс при клике
 
 var roomsList = document.querySelectorAll('.rooms-element');
 roomsList.forEach(function (element) {

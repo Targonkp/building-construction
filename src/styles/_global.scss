@@ -3,13 +3,10 @@ $mainColor: #ffffff;
 $mainBackgroundColor: #ffffff;
 
 
-body{
-  background: $mainBackgroundColor;
-  font-family: $mainFont;
-  color: $mainColor;
-  font-weight: 400;
+.transition_disabled
+{
+  animation: none !important;
 }
-
 
 body{
   background: $mainBackgroundColor;
@@ -22,6 +19,10 @@ body{
 ul{
   padding: 0;
   margin: 0;
+}
+
+.transition_disabled{
+  animation: none !important;
 }
 
 .background-video{

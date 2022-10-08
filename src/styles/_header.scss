@@ -77,11 +77,30 @@
         background: #FFFFFF;
         width: 48px;
         height: 2px;
+        transition: 0.3s;
       }
 
       span:first-child{
         margin: 0 0 6px 0;
       }
+}
+
+
+.burger-menu-active{
+
+  span:first-child{
+    transform: rotate(45deg);
+    transition: 0.5s;
+    margin: -1px;
+    height: 3px;
+  }
+
+  span:last-child{
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    margin: -1px;
+    height: 3px;
+  }
 }
 
 

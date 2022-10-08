@@ -9,7 +9,8 @@ videoElList.forEach(
 //массив с h1
 let headerArr = ['Стильная архитектура и виды из окон будущей квартиры не оставят равнодушных',
     'Большие парковые территории и безопасные дворы созданы для счастливой жизни'];
-
+//получаю основной заголовок
+let mainHeader = document.querySelector('.choice-buy__header');
 
 //записываю начальное значение активного видео
 let startVideo = 0;
@@ -35,14 +36,22 @@ function videoBackgroundNext() {
     else {
         startVideo +=1;
     }
-    //удаляю у всех плееров активный класс
+    //удаляю у всех плееров активный класс и класс, запрещающий анимацию
     videoElList.forEach(
         element => {
             element.classList.remove('background-video-active');
+            element.classList.remove('transition_disabled');
         }
     )
     //добавляю следующему плееру активный класс
     videoElList[startVideo].classList.add('background-video-active');
+    //Добавляю заголовку анимацию и изменяю его текст
+    mainHeader.style.animation = 'headerOpacity 2s';
+    setTimeout(
+        () => {
+            mainHeader.innerHTML = headerArr[startVideo];
+        }, 1000
+    )
     activeVideo()
 }
 
@@ -56,14 +65,22 @@ function videoBackgroundPrevious() {
         startVideo -=1;
     }
     console.log(startVideo);
-    //удаляю у всех плееров активный класс
+    //удаляю у всех плееров активный класс и класс, запрещающий анимацию
     videoElList.forEach(
         element => {
             element.classList.remove('background-video-active');
+            element.classList.remove('transition_disabled');
         }
     )
     //добавляю предыдущему плееру активный класс
     videoElList[startVideo].classList.add('background-video-active');
+    //Добавляю заголовку анимацию и изменяю его текст
+    mainHeader.style.animation = 'headerOpacity 3s';
+    setTimeout(
+        () => {
+            mainHeader.innerHTML = headerArr[startVideo];
+        }, 1000
+    )
     activeVideo()
 }
 
@@ -77,7 +94,7 @@ function videoBackgroundPrevious() {
 // let videoArr = ['video/Dog%20-%2078200.mp4', 'video/Flowers%20-%2064035.mp4'];
 
 
-//навешиваю функциb для изменения фона
+//навешиваю функцию для изменения фона
 document.querySelector('.switch-arrow__right').addEventListener(
     'click',
     videoBackgroundNext
@@ -88,6 +105,15 @@ document.querySelector('.switch-arrow__left').addEventListener(
     videoBackgroundPrevious
 )
 
+
+//функция для смены активного класса у burger-menu
+let burgerMenuEl = document.querySelector('.burger-menu');
+burgerMenuEl.addEventListener(
+    'click',
+    () => {
+        burgerMenuEl.classList.toggle('burger-menu-active');
+    }
+)
 
 //получаю список элементов с количеством комнат в фильтре и назначаю класс при клике
 let roomsList = document.querySelectorAll('.rooms-element');
@@ -132,4 +158,3 @@ buildingsListSub.addEventListener(
         }
 }
 )
-
