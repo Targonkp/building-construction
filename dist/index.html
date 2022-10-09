@@ -401,21 +401,18 @@
                 <li class="filters-menu__element square-element">
                   <span class="text-field">от</span
                   ><span class="edited-field" contenteditable="true">
-                    32 м²</span
+                    <span class="left-position-square">32</span> м²</span
                   >
                 </li>
                 <li class="filters-menu__element square-element">
                   <span class="text-field">до</span>
                   <span class="edited-field" contenteditable="true">
-                    186 м²</span
+                    <span class="right-position-square">186</span> м²</span
                   >
                 </li>
               </ul>
-              <div class="range-container range-square">
-                <div class="range-line">
-                  <span class="range-square__left"></span>
-                  <span class="range-square__right"></span>
-                </div>
+              <div class="range-container">
+                <div class="range-square"></div>
               </div>
             </div>
             <div class="filters-container filters-list__cost">
@@ -423,18 +420,19 @@
               <ul class="filters-menu">
                 <li class="filters-menu__element cost-element">
                   <span class="text-field">от</span>
-                  <span class="edited-field" contenteditable="true">1,5</span>
+                  <span class="edited-field" contenteditable="true"
+                    ><span class="left-position-cost">1,5</span></span
+                  >
                 </li>
                 <li class="filters-menu__element cost-element">
                   <span class="text-field">до</span>
-                  <span class="edited-field" contenteditable="true">17,5</span>
+                  <span class="edited-field" contenteditable="true"
+                    ><span class="right-position-cost">17,5</span></span
+                  >
                 </li>
               </ul>
-              <div class="range-container range-cost">
-                <div class="range-line">
-                  <span></span>
-                  <span></span>
-                </div>
+              <div class="range-container">
+                <div class="range-cost"></div>
               </div>
             </div>
 
@@ -529,6 +527,7 @@
         </div>
       </section>
     </main>
+    <script src="mini-files/nouislider.js"></script>
     <script src="mini-files/app.js"></script>
   </body>
 </html>

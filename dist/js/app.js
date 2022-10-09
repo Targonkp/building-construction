@@ -112,4 +112,42 @@ buildingsListSub.addEventListener('click', function (event) {
     openSub.classList.remove('active');
     buildingsListSub.classList.remove('active');
   }
+}); //создаю ползунки с диапазоном для площади
+
+var squareRangeEl = document.querySelector('.range-square');
+noUiSlider.create(squareRangeEl, {
+  start: [20, 80],
+  connect: true,
+  step: 1,
+  padding: 2,
+  range: {
+    'min': 0,
+    'max': 100
+  }
+}); //изменяю значения в полях с площадью - использую настройки из плагина
+
+var leftPositionSquare = document.querySelector('.left-position-square');
+var RightPositionSquare = document.querySelector('.right-position-square');
+squareRangeEl.noUiSlider.on('update', function (values, handle) {
+  leftPositionSquare.innerHTML = values[0] * 2;
+  RightPositionSquare.innerHTML = values[1] * 2;
+}); //создаю ползунки с диапазоном для стоимости
+
+var costRangeEl = document.querySelector('.range-cost');
+noUiSlider.create(costRangeEl, {
+  start: [20, 80],
+  connect: true,
+  padding: 2,
+  range: {
+    'min': 0,
+    'max': 100
+  }
+}); //изменяю значения в полях с площадью - использую настройки из плагина
+
+var leftPositionCost = document.querySelector('.left-position-cost');
+var RightPositionCost = document.querySelector('.right-position-cost');
+costRangeEl.noUiSlider.on('update', function (values, handle) {
+  //использую toFixed, чтобы округлить до первой цифры после запятой
+  leftPositionCost.innerHTML = (values[0] / 5).toFixed(1);
+  RightPositionCost.innerHTML = (values[1] / 5).toFixed(1);
 });

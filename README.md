@@ -5,4 +5,5 @@
 3) **JS** - использован чистый JS (без плагинов и библиотек)
 4) **CSS** - использован препроцессор SASS
 5) **Сборка** - использован Gulp
-6) **Запуск проекта:** https://targonkp.github.io/building-construction/dist
+6) **Дополнительные плагины** - noUiSlider (для создания и кастомизации ползунков)
+7) **Запуск проекта:** https://targonkp.github.io/building-construction/dist
