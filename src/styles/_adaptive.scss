@@ -1,0 +1,20 @@
+@media only screen and (max-width: 1300px) {
+  .sign{
+    width: 130px;
+  }
+
+  .contacts{
+    width: 290px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+}
+
+
+@media only screen and (max-width: 768px) {
+  .burger-menu{
+    display: flex;
+  }
+}

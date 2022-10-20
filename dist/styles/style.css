@@ -391,6 +391,7 @@ ul {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 auto;
+  position: relative;
 }
 
 h1 {
@@ -827,6 +828,7 @@ h1 {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  margin: 0 30px 0 0;
 }
 .logo:hover {
   opacity: 0.7;
@@ -901,9 +903,7 @@ h1 {
 }
 
 .burger-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -1002,6 +1002,9 @@ main {
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+}
+.sign img {
+  width: 100%;
 }
 
 .icon-list {
@@ -1310,6 +1313,7 @@ main {
 
 .filters {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   width: 100%;
 }
 
@@ -1328,7 +1332,7 @@ main {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 35px 0 42px 0;
-  margin: 0 0 200px 0;
+  margin: 0 0 120px 0;
 }
 
 .filters-container {
@@ -1357,9 +1361,16 @@ main {
   -ms-flex-direction: row;
   flex-direction: row;
   list-style-type: none;
+  height: 56px;
+  width: 100%;
 }
 .filters-menu__element {
-  padding: 21px 23px 19px 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 16px;
   line-height: 16px;
   color: #ffffff;
@@ -1374,6 +1385,12 @@ main {
   border-radius: 0 7px 7px 0;
 }
 
+.filters-list__rooms {
+  -ms-flex-negative: 7;
+  flex-shrink: 7;
+  max-width: 314px;
+  width: 100%;
+}
 .filters-list__rooms .filters-menu__element:first-child {
   background: #ffffff;
   color: #171723;
@@ -1383,6 +1400,12 @@ main {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .filters-list__rooms .rooms-element:hover {
   opacity: 0.7;
@@ -1404,9 +1427,12 @@ main {
   max-width: 270px;
   width: 100%;
   position: relative;
+  -ms-flex-negative: 8;
+  flex-shrink: 8;
 }
 .filters-list__square .square-element {
   width: 50%;
+  padding: 0 0 0 15px;
 }
 .filters-list__square .square-element:first-child {
   border-right: 1px solid rgba(255, 255, 255, 0.3);
@@ -1416,9 +1442,12 @@ main {
   max-width: 270px;
   width: 100%;
   position: relative;
+  -ms-flex-negative: 8;
+  flex-shrink: 8;
 }
 .filters-list__cost .cost-element {
   width: 50%;
+  padding: 0 0 0 15px;
 }
 .filters-list__cost .cost-element:first-child {
   border-right: 1px solid rgba(255, 255, 255, 0.3);
@@ -1431,6 +1460,7 @@ main {
 
 .text-field {
   opacity: 0.4;
+  padding-right: 4px;
 }
 
 .range-container {
@@ -1452,6 +1482,8 @@ main {
 .filters-list__building {
   max-width: 270px;
   width: 100%;
+  -ms-flex-negative: 8;
+  flex-shrink: 8;
 }
 .filters-list__building .buildings-list {
   -webkit-box-orient: vertical;
@@ -1466,8 +1498,10 @@ main {
   font-size: 16px;
   line-height: 16px;
   background: rgba(255, 255, 255, 0.16);
+  padding: 21px 21px 19px 17px;
   border-radius: 7px;
   margin: 0 45px 0 0;
+  height: 56px;
 }
 .filters-list__building .buildings-list .buildings-element-main {
   position: relative;
@@ -1572,13 +1606,16 @@ main {
 .filters-result {
   max-width: 224px;
   width: 100%;
+  -ms-flex-negative: 9;
+  flex-shrink: 9;
 }
 
 .filters-button {
   font-size: 16px;
   line-height: 16px;
   background: #d90002;
-  width: 224px;
+  max-width: 224px;
+  width: 100%;
   height: 56px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -1720,5 +1757,26 @@ main {
   }
   100% {
     opacity: 1;
+  }
+}
+.footer-container {
+  width: 100%;
+  padding: 30px 0;
+  background: rgba(199, 199, 199, 0.35);
+}
+
+@media only screen and (max-width: 1300px) {
+  .sign {
+    width: 130px;
+  }
+  .contacts {
+    width: 290px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .burger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
