@@ -1,6 +1,28 @@
 "use strict";
 
-//получаю все видео и устанавливаю на паузу
+//фиксирую изменение экрана
+var videoArr = document.querySelectorAll('.background-video');
+var backgroundImageEl = document.querySelector('.background-image');
+
+function changeBackground() {
+  if (window.innerWidth <= 1000) {
+    videoArr.forEach(function (element) {
+      element.style.display = 'none';
+    });
+    backgroundImageEl.style.display = 'block';
+  } else {
+    videoArr.forEach(function (element) {
+      element.style.display = 'block';
+    });
+    backgroundImageEl.style.display = 'none';
+  }
+} //запускаю функцию сразу, как только DOM загрузится
+
+
+document.addEventListener('DOMContentLoaded', changeBackground); //запускаю функцию при каждом изменении размеров экрана
+
+window.addEventListener('resize', changeBackground); //получаю все видео и устанавливаю на паузу
+
 var videoElList = document.querySelectorAll('.background-video');
 videoElList.forEach(function (element) {
   element.pause();
@@ -83,8 +105,10 @@ document.querySelector('.switch-arrow__right').addEventListener('click', videoBa
 document.querySelector('.switch-arrow__left').addEventListener('click', videoBackgroundPrevious); //функция для смены активного класса у burger-menu
 
 var burgerMenuEl = document.querySelector('.burger-menu');
+var menuEl = document.querySelector('.menu');
 burgerMenuEl.addEventListener('click', function () {
   burgerMenuEl.classList.toggle('burger-menu-active');
+  menuEl.classList.toggle('menu-active');
 }); //получаю список элементов с количеством комнат в фильтре и назначаю класс при клике
 
 var roomsList = document.querySelectorAll('.rooms-element');

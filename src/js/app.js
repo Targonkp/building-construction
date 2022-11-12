@@ -1,3 +1,41 @@
+//фиксирую изменение экрана
+let videoArr = document.querySelectorAll('.background-video');
+let backgroundImageEl = document.querySelector('.background-image');
+
+function changeBackground(){
+    if (window.innerWidth <= 1000)
+    {
+        videoArr.forEach(
+            element => {
+                element.style.display = 'none';
+            }
+        )
+        backgroundImageEl.style.display = 'block';
+    }
+    else
+    {
+        videoArr.forEach(
+            element => {
+                element.style.display = 'block';
+            }
+        )
+        backgroundImageEl.style.display = 'none';
+    }
+}
+
+//запускаю функцию сразу, как только DOM загрузится
+document.addEventListener(
+    'DOMContentLoaded',
+    changeBackground
+
+)
+
+//запускаю функцию при каждом изменении размеров экрана
+window.addEventListener(
+    'resize',
+     changeBackground
+)
+
 //получаю все видео и устанавливаю на паузу
 let videoElList = document.querySelectorAll('.background-video');
 videoElList.forEach(
@@ -108,12 +146,15 @@ document.querySelector('.switch-arrow__left').addEventListener(
 
 //функция для смены активного класса у burger-menu
 let burgerMenuEl = document.querySelector('.burger-menu');
+let menuEl = document.querySelector('.menu');
 burgerMenuEl.addEventListener(
     'click',
     () => {
         burgerMenuEl.classList.toggle('burger-menu-active');
+        menuEl.classList.toggle('menu-active');
     }
 )
+
 
 //получаю список элементов с количеством комнат в фильтре и назначаю класс при клике
 let roomsList = document.querySelectorAll('.rooms-element');
@@ -205,3 +246,4 @@ costRangeEl.noUiSlider.on('update', function (values, handle) {
     leftPositionCost.innerHTML = ((values[0])/5).toFixed(1);
     RightPositionCost.innerHTML = ((values[1])/5).toFixed(1);
 });
+

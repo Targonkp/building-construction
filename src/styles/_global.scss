@@ -1,7 +1,7 @@
 $mainFont: 'Core Sans C', sans-serif;
 $mainColor: #ffffff;
 $mainBackgroundColor: #ffffff;
-
+@import "adaptive";
 
 .transition_disabled
 {
@@ -43,13 +43,30 @@ ul{
   animation: changeVideo 2.4s;
 }
 
+.background-image{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  background: url("../images/background-image.jpg") no-repeat center center / cover;
+  filter: brightness(0.65);
+  display: none;
+}
+
 .wrap{
   max-width: 1680px;
+  min-width: 320px;
   width: 100%;
   padding: 0 40px;
   box-sizing: border-box;
   margin: 0 auto;
   position: relative;
+
+    @include medium{
+      padding: 0 32px;
+    }
 }
 
 h1{

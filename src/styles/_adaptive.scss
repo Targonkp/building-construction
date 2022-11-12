@@ -1,20 +1,12 @@
-@media only screen and (max-width: 1300px) {
-  .sign{
-    width: 130px;
-  }
-
-  .contacts{
-    width: 290px;
-  }
+@mixin x-small{
+  @media only screen and (max-width: 576px) { @content; }
 }
-
-@media only screen and (max-width: 1024px) {
-
+@mixin small{
+  @media only screen and (max-width: 768px) { @content; }
 }
-
-
-@media only screen and (max-width: 768px) {
-  .burger-menu{
-    display: flex;
-  }
+@mixin medium{
+  @media only screen and (max-width: 1024px) { @content; }
+}
+@mixin large{
+  @media only screen and (max-width: 1300px) { @content; }
 }

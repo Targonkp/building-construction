@@ -1,3 +1,5 @@
+@import "adaptive";
+
 main{
   position: relative;
 }
@@ -17,6 +19,10 @@ main{
   top: 117px;
   left: 0;
   transition: 0.3s;
+
+  @include large{
+    width: 130px;
+  }
 
     &:hover{
       filter: contrast(70%);
@@ -289,12 +295,21 @@ main{
   justify-content: space-between;
   padding: 35px 0 42px 0;
   margin: 0 0 120px 0;
+
+    @include large{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 }
 
 .filters-container{
   display: flex;
   flex-direction: column;
   margin: 0 20px 0 0;
+
+    @include large{
+      margin: 14px 20px 5px 0;
+    }
 }
 
 .filters-header{
