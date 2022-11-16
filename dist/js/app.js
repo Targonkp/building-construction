@@ -174,4 +174,10 @@ costRangeEl.noUiSlider.on('update', function (values, handle) {
   //использую toFixed, чтобы округлить до первой цифры после запятой
   leftPositionCost.innerHTML = (values[0] / 5).toFixed(1);
   RightPositionCost.innerHTML = (values[1] / 5).toFixed(1);
+}); //отключаю клик по ссылкам в списке жилых комплексов
+
+document.querySelectorAll('.houses-list__link').forEach(function (element) {
+  return element.addEventListener('click', function (event) {
+    event.preventDefault();
+  });
 });

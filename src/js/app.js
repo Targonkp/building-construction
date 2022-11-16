@@ -247,3 +247,12 @@ costRangeEl.noUiSlider.on('update', function (values, handle) {
     RightPositionCost.innerHTML = ((values[1])/5).toFixed(1);
 });
 
+//отключаю клик по ссылкам в списке жилых комплексов
+document.querySelectorAll('.houses-list__link').forEach(
+    element => element.addEventListener(
+        'click',
+        (event) => {
+            event.preventDefault();
+        }
+    )
+)
