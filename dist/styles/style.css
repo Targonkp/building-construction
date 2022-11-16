@@ -351,6 +351,11 @@ body {
   color: #ffffff;
   font-weight: 400;
   font-size: 16px;
+  overflow-y: visible;
+}
+
+body.overflow-hidden {
+  overflow-y: hidden;
 }
 
 ul {
@@ -1833,8 +1838,20 @@ main {
   margin: 0 45px 0 0;
   height: 56px;
 }
+@media only screen and (max-width: 1024px) {
+  .filters-list__building .buildings-list .buildings-element {
+    background: rgba(255, 255, 255, 0.85);
+    color: #0c0c0c;
+  }
+}
 .filters-list__building .buildings-list .buildings-element-main {
   position: relative;
+}
+@media only screen and (max-width: 1024px) {
+  .filters-list__building .buildings-list .buildings-element-main {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+  }
 }
 
 .buildings-list-sub {

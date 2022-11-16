@@ -152,6 +152,7 @@ burgerMenuEl.addEventListener(
     () => {
         burgerMenuEl.classList.toggle('burger-menu-active');
         menuEl.classList.toggle('menu-active');
+        document.body.classList.toggle('overflow-hidden');
     }
 )
 

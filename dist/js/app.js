@@ -109,6 +109,7 @@ var menuEl = document.querySelector('.menu');
 burgerMenuEl.addEventListener('click', function () {
   burgerMenuEl.classList.toggle('burger-menu-active');
   menuEl.classList.toggle('menu-active');
+  document.body.classList.toggle('overflow-hidden');
 }); //получаю список элементов с количеством комнат в фильтре и назначаю класс при клике
 
 var roomsList = document.querySelectorAll('.rooms-element');

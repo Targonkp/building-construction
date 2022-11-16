@@ -592,6 +592,7 @@ main{
   .buildings-list{
     flex-direction: column;
 
+
     .buildings-element{
       box-sizing: border-box;
       width: 100%;
@@ -602,10 +603,20 @@ main{
       border-radius: 7px;
       margin: 0 45px 0 0;
       height: 56px;
+
+        @include medium{
+          background: rgba(255, 255, 255, 0.85);
+          color: #0c0c0c;
+        }
     }
 
     .buildings-element-main{
       position: relative;
+
+        @include medium{
+          background: rgba(255, 255, 255, 0.16);
+          color: #FFFFFF;
+        }
     }
   }
 }
