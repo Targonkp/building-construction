@@ -10,10 +10,24 @@ main{
   justify-content: space-between;
   align-items: flex-start;
   padding: 117px 0 0 0;
+
+    @include medium{
+      padding: 90px 0 0 0;
+    }
+
+    @include small{
+      padding: 70px 0 0 0;
+      flex-direction: column-reverse;
+    }
+
+    @include x-small{
+      padding: 40px 0 0 0;
+    }
 }
 
 .sign{
-  width: 205px;
+  max-width: 205px;
+  width: 100%;
   height: auto;
   position: absolute;
   top: 117px;
@@ -24,18 +38,50 @@ main{
     width: 130px;
   }
 
+  @include small{
+    width: auto;
+    left: auto;
+    right: 0;
+    top: 280px;
+  }
+
     &:hover{
       filter: contrast(70%);
       transition: 0.4s;
     }
 
-    img{
+    &__image{
       width: 100%;
+      display: block;
+
+        @include small{
+          display: none;
+        }
+    }
+
+    &__image2{
+      width: 58px;
+      display: none;
+
+      @include small{
+        display: block;
+      }
     }
 }
 
 .icon-list{
   align-self: center;
+    @include medium{
+      max-width: 150px;
+      width: 100%;
+    }
+
+    @include small{
+      max-width: none;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
 }
 
 .icons{
@@ -45,18 +91,32 @@ main{
   list-style-type: none;
   transition: 0.3s;
 
+  @include small{
+    display: flex;
+    flex-direction: row;
+  }
+
     &__element{
       margin: 0 0 30px 0;
         &:hover{
           opacity: 0.7;
           transition: 0.4s;
         }
+
+      @include small{
+        margin: 5px 10px;
+      }
     }
 }
 
 .houses-list-wrap{
   position: relative;
   overflow: hidden;
+  margin: 10px 0;
+
+    @include small{
+      width: 100%;
+    }
 }
 
 .houses-list{
@@ -67,9 +127,33 @@ main{
   flex-wrap: wrap;
   width: 406px;
 
+    @include medium{
+      width: 340px;
+      margin: 0 14px 140px 0;
+      flex-direction: column;
+    }
+
+    @include small{
+      width: 100%;
+      flex-direction: row;
+    }
+
     &__element{
       width: calc((100%/2) - 44px);
       margin: 0 44px 11px 0;
+
+        @include large{
+          margin: 0 14px 11px 0;
+        }
+
+        @include medium{
+          width: 100%;
+        }
+
+        @include small{
+          width: calc(50% - 44px);
+          margin: 8px 10px 8px 4px;
+        }
     }
 
     & ~ .houses-list:nth-child(even){
@@ -84,6 +168,11 @@ main{
       line-height: 19px;
       transition: 0.3s;
 
+        @include small{
+          font-size: 20px;
+          line-height: 24px;
+        }
+
         &:hover{
           opacity: 1;
           transition: 0.4s;
@@ -97,16 +186,36 @@ main{
     left: 0;
     bottom: 0;
     display: none;
+
+      @include large{
+        max-width: 310px;
+      }
+
+      @include medium{
+        max-width: 230px;
+        width: 100%;
+      }
+
+      @include small{
+        max-width: 300px;
+        width: 100%;
+      }
   }
 
   &__image{
     border-radius: 10px;
+
+      @include large{
+        width: 100%;
+        height: auto;
+      }
   }
 
   &__header{
-    font-size: 16px;
+    font-size: 18px;
     line-height: 19px;
     margin: 17px 0 0 0;
+    display: block;
   }
 
   &__paragraph{
@@ -118,7 +227,7 @@ main{
 }
 
 .houses-list__element:hover + .houses-list__building{
-  bottom: 121px;
+  bottom: 10%;
   opacity: 1;
   display: block;
   animation: buildAnimation 0.7s;
@@ -129,6 +238,12 @@ main{
   min-height: 314px;
   visibility: hidden;
   margin: 0 0 121px 0;
+
+    @include medium{
+      width: 260px;
+      min-height: 248px;
+      margin: 0 0 0 0;
+    }
 }
 
 .choice-buy{
@@ -139,6 +254,14 @@ main{
    max-width: 581px;
    width: 100%;
    margin: 0;
+
+      @include large{
+        max-width: 500px;
+      }
+
+      @include medium{
+        max-width: 480px;
+      }
 }
 
 .switch{
@@ -149,6 +272,14 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+      @include large{
+        left: -95px;
+      }
+
+      @include small{
+        display: none;
+      }
 
       .switch__arrow{
         cursor: pointer;
@@ -185,6 +316,16 @@ main{
 
 .choice-buy__button{
   margin: 50px 0 0 0;
+
+    @include medium{
+      margin: 34px 0 0 0;
+    }
+
+  @include small{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .button_choice{
@@ -299,6 +440,10 @@ main{
     @include large{
       flex-wrap: wrap;
       justify-content: center;
+    }
+
+    @include medium{
+      margin: 0 0 50px 0;
     }
 }
 
@@ -607,7 +752,7 @@ main{
     opacity: 0;
   }
   100%{
-    bottom: 121px;
+    bottom: 10%;
     opacity: 1;
   }
 }

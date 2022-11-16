@@ -5,7 +5,7 @@ var videoArr = document.querySelectorAll('.background-video');
 var backgroundImageEl = document.querySelector('.background-image');
 
 function changeBackground() {
-  if (window.innerWidth <= 1000) {
+  if (window.innerWidth <= 768) {
     videoArr.forEach(function (element) {
       element.style.display = 'none';
     });

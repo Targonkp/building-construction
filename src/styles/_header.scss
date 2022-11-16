@@ -90,7 +90,7 @@
     right: -100%;
     z-index: 10;
     width: 240px;
-    background: #859d88;
+    background: #456076;
     padding: 30px 0 0 0;
     height: 100vh;
     transition: 0.5s;
@@ -129,7 +129,7 @@
   @include small{
     display: flex;
     position: fixed;
-    top: 24px;
+    top: 30px;
     right: 18px;
     z-index: 11;
   }

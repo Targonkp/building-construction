@@ -382,6 +382,8 @@ ul {
   right: 0;
   -webkit-animation: changeVideo 2.4s;
   animation: changeVideo 2.4s;
+  -webkit-filter: brightness(0.75);
+  filter: brightness(0.75);
 }
 
 .background-image {
@@ -410,15 +412,31 @@ ul {
 }
 @media only screen and (max-width: 1024px) {
   .wrap {
-    padding: 0 32px;
+    padding: 0 28px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .wrap {
+    padding: 0 20px;
   }
 }
 
 h1 {
   font-size: 40px;
   line-height: 47px;
-  letter-spacing: -0.02em;
   font-weight: 400;
+}
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+    line-height: 31px;
+  }
 }
 
 .button {
@@ -951,7 +969,7 @@ h1 {
     right: -100%;
     z-index: 10;
     width: 240px;
-    background: #859d88;
+    background: #456076;
     padding: 30px 0 0 0;
     height: 100vh;
     -webkit-transition: 0.5s;
@@ -1000,7 +1018,7 @@ h1 {
     display: -ms-flexbox;
     display: flex;
     position: fixed;
-    top: 24px;
+    top: 30px;
     right: 18px;
     z-index: 11;
   }
@@ -1079,9 +1097,29 @@ main {
   align-items: flex-start;
   padding: 117px 0 0 0;
 }
+@media only screen and (max-width: 1024px) {
+  .main-content {
+    padding: 90px 0 0 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main-content {
+    padding: 70px 0 0 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .main-content {
+    padding: 40px 0 0 0;
+  }
+}
 
 .sign {
-  width: 205px;
+  max-width: 205px;
+  width: 100%;
   height: auto;
   position: absolute;
   top: 117px;
@@ -1095,6 +1133,14 @@ main {
     width: 130px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .sign {
+    width: auto;
+    left: auto;
+    right: 0;
+    top: 280px;
+  }
+}
 .sign:hover {
   -webkit-filter: contrast(70%);
   filter: contrast(70%);
@@ -1102,13 +1148,46 @@ main {
   -o-transition: 0.4s;
   transition: 0.4s;
 }
-.sign img {
+.sign__image {
   width: 100%;
+  display: block;
+}
+@media only screen and (max-width: 768px) {
+  .sign__image {
+    display: none;
+  }
+}
+.sign__image2 {
+  width: 58px;
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .sign__image2 {
+    display: block;
+  }
 }
 
 .icon-list {
   -ms-flex-item-align: center;
   align-self: center;
+}
+@media only screen and (max-width: 1024px) {
+  .icon-list {
+    max-width: 150px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .icon-list {
+    max-width: none;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
 }
 
 .icons {
@@ -1120,6 +1199,17 @@ main {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
+@media only screen and (max-width: 768px) {
+  .icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
 .icons__element {
   margin: 0 0 30px 0;
 }
@@ -1129,10 +1219,21 @@ main {
   -o-transition: 0.4s;
   transition: 0.4s;
 }
+@media only screen and (max-width: 768px) {
+  .icons__element {
+    margin: 5px 10px;
+  }
+}
 
 .houses-list-wrap {
   position: relative;
   overflow: hidden;
+  margin: 10px 0;
+}
+@media only screen and (max-width: 768px) {
+  .houses-list-wrap {
+    width: 100%;
+  }
 }
 
 .houses-list {
@@ -1149,9 +1250,44 @@ main {
   flex-wrap: wrap;
   width: 406px;
 }
+@media only screen and (max-width: 1024px) {
+  .houses-list {
+    width: 340px;
+    margin: 0 14px 140px 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .houses-list {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
 .houses-list__element {
   width: calc(50% - 44px);
   margin: 0 44px 11px 0;
+}
+@media only screen and (max-width: 1300px) {
+  .houses-list__element {
+    margin: 0 14px 11px 0;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .houses-list__element {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .houses-list__element {
+    width: calc(50% - 44px);
+    margin: 8px 10px 8px 4px;
+  }
 }
 .houses-list ~ .houses-list:nth-child(even) {
   margin: 0 0 11px 0;
@@ -1165,6 +1301,12 @@ main {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+}
+@media only screen and (max-width: 768px) {
+  .houses-list__link {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 .houses-list__link:hover {
   opacity: 1;
@@ -1180,13 +1322,37 @@ main {
   bottom: 0;
   display: none;
 }
+@media only screen and (max-width: 1300px) {
+  .houses-list__building {
+    max-width: 310px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .houses-list__building {
+    max-width: 230px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .houses-list__building {
+    max-width: 300px;
+    width: 100%;
+  }
+}
 .houses-list__image {
   border-radius: 10px;
 }
+@media only screen and (max-width: 1300px) {
+  .houses-list__image {
+    width: 100%;
+    height: auto;
+  }
+}
 .houses-list__header {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 19px;
   margin: 17px 0 0 0;
+  display: block;
 }
 .houses-list__paragraph {
   font-size: 16px;
@@ -1196,7 +1362,7 @@ main {
 }
 
 .houses-list__element:hover + .houses-list__building {
-  bottom: 121px;
+  bottom: 10%;
   opacity: 1;
   display: block;
   -webkit-animation: buildAnimation 0.7s;
@@ -1209,6 +1375,13 @@ main {
   visibility: hidden;
   margin: 0 0 121px 0;
 }
+@media only screen and (max-width: 1024px) {
+  .building-container {
+    width: 260px;
+    min-height: 248px;
+    margin: 0 0 0 0;
+  }
+}
 
 .choice-buy {
   position: relative;
@@ -1218,6 +1391,16 @@ main {
   max-width: 581px;
   width: 100%;
   margin: 0;
+}
+@media only screen and (max-width: 1300px) {
+  .choice-buy__header {
+    max-width: 500px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .choice-buy__header {
+    max-width: 480px;
+  }
 }
 
 .switch {
@@ -1235,6 +1418,16 @@ main {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+@media only screen and (max-width: 1300px) {
+  .switch {
+    left: -95px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .switch {
+    display: none;
+  }
 }
 .switch .switch__arrow {
   cursor: pointer;
@@ -1282,6 +1475,25 @@ main {
 
 .choice-buy__button {
   margin: 50px 0 0 0;
+}
+@media only screen and (max-width: 1024px) {
+  .choice-buy__button {
+    margin: 34px 0 0 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .choice-buy__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
 }
 
 .button_choice {
@@ -1440,6 +1652,11 @@ main {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .filters-list {
+    margin: 0 0 50px 0;
   }
 }
 
@@ -1787,7 +2004,7 @@ main {
     opacity: 0;
   }
   100% {
-    bottom: 121px;
+    bottom: 10%;
     opacity: 1;
   }
 }
@@ -1798,7 +2015,7 @@ main {
     opacity: 0;
   }
   100% {
-    bottom: 121px;
+    bottom: 10%;
     opacity: 1;
   }
 }
@@ -1874,6 +2091,23 @@ main {
 }
 .footer-container {
   width: 100%;
-  padding: 30px 0;
+  padding: 30px 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   background: rgba(199, 199, 199, 0.35);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.footer-text {
+  font-size: 18px;
+  line-height: 24px;
 }
